@@ -1,3 +1,4 @@
 {
-    "chromeWebSecurity" : false
+    "chromeWebSecurity" : true,
+    "videoCompression": false
 }
