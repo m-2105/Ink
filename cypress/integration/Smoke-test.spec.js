@@ -1,24 +1,26 @@
 /// <reference types="cypress' / >
 import '../fixtures/inkforall_url.json'
-import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, NavigateForlocalStorage } from '../Page_Objects/ExportFunctions';
+import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, ByPassLogin } from '../Page_Objects/ExportFunctions';
 import '../Page_Objects/Local_Storage'
 
 before(() => {
-//NavigateForlocalStorage();
-navigate(0)
+    navigate(0)
+})
+
+beforeEach(() => {
+ByPassLogin()
 //cy.viewport('iphone-6')
 })
 
 describe('Smoke Test For InkForALl', () => {
     
     //Validating the Testing.inkforAll Link
-    it('Verify All Links', () => {
-        validation(0)
-    })
+    it.only('Verify All Links', () => {
+         validation(0)
+         })
     
     //Verifying the All the Links in Header
     it('Verify Header Links', () => {
-        //cy.restoreLocalStorage()
         buttonClick('.nav-02__logo_img')  //Function is exported from ExportFuntions.js File 
         validation(29)                    //Function is exported from ExportFuntions.js File 
         navbar()                         //Function is exported from ExportFuntions.js File 

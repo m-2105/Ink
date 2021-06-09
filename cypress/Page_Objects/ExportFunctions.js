@@ -1,11 +1,32 @@
 /// <reference types="cypress' / >
 import '../fixtures/inkforall_url.json'
+import '../fixtures/ByPassLogin.json'
+import '../Page_Objects/Local_Storage'
 
 //Function for Saving Local Storage [Will be corrected by tomorrow]
-export function NavigateForlocalStorage() {
-  cy.visit('https://ink-test.seo.app?code=4ds34s-231sed2-123sde-32s2332')
-  cy.saveLocalStorage()
-}
+//  export function ByPassLogin() {
+//   const options = {
+//     method: 'POST',
+//       url: 'https://testing.inkforall.com',
+  
+//       body: {
+//         idToken : Cypress.env('Value1'),
+//         accessToken : Cypress.env('Value2'),
+//         user : Cypress.env('Value3'),
+//         refreshToken : Cypress.env('Value4')
+//       }
+//   }
+//   cy.request(options)
+//   cy.visit ('ink-test.seo.app/?code=4ds34s-231sed2-123sde-32s2332').then(()=>{
+//     cy.saveLocalStorage()
+//   })
+//   // cy.fixture('ByPassLogin').then(function (data) {
+//   //   this.data = data;
+//   //  for(var i=0; i <= data.length; i++){
+//   //   localStorage.setItem( this.data[i].Key ,this.data[i].Value)
+//   //  }
+//   //  }) 
+//  }
 
 //Function for Navigating URl
 export function navigateURl(url) {
