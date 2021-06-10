@@ -7,7 +7,8 @@
     {
         "index": 1,
         "Key" : "accessToken",
-        "Value" : ""},
+        "Value" : ""
+    },
     {
         "index": 3,
         "Key" : "refreshToken",

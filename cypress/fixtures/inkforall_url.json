@@ -17,35 +17,35 @@
         "index": 2,
         "location": "Header",
         "buttonName": "AI Writing Tools",
-        "testurl": "https://testing.inkforall.com/writing-tools",
+        "testurl": "/writing-tools",
         "produrl": "https://nkforall.com/writing-tools"
     },
     {
         "index": 3,
         "location": "Header",
         "buttonName": "Resources",
-        "testurl": "https://testing.inkforall.com/questions-answers",
+        "testurl": "/questions-answers",
         "produrl": "https://inkforall.com/questions-answers"
     },
     {
         "index": 4,
         "location": "Header",
         "buttonName": "Pricing",
-        "testurl": "https://testing.inkforall.com/pricing",
+        "testurl": "/pricing",
         "produrl": "https:/inkforall.com/pricing"
     },
     {
         "index": 5,
         "location": "Header",
         "buttonName": "Login",
-        "testurl": "https://ink-test.seo.app/app",
+        "testurl": "https://ink-test.seo.app",
         "produrl": "https://auth.inkforall.com/?"
     },
     {
         "index": 6,
         "location": "Header",
         "buttonName": "Signup",
-        "testurl": "https://ink-test.seo.app/app",
+        "testurl": "https://ink-test.seo.app",
         "produrl": "https://auth.inkforall.com/?"
     },
     {

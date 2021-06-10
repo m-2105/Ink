@@ -58,17 +58,17 @@ export function validation(n) {
 export function domValidation(Path, n) {
   cy.fixture('inkforall_url').then(function (data) {
     this.data = data;
-    cy.get(Path).should("have.attr", "href", this.data[n].testurl);
+    cy.get(Path).should("have.attr", "href").and('contain',this.data[n].testurl);
   })
 }
 
 //Function for Validating all the NavBar items URL
 export function navbar() {
   for (var i = 1; i <= 6; i++) {
-    buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
-    validation(i)
-    navigate(0)
-    validation(0)
+   // buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
+    domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
+    // navigate(0)
+    // validation(0)
   }
 }
 
@@ -85,8 +85,6 @@ export function downloadApp(Path, here) {
 
 //Function for Validating all the Items in footer Except Share Icons
 export function footer() {
-  buttonClick('.footer-04__logo')
-  validation(28)
 
   for (var i = 2; i <= 4; i++) {
     if (i == 2 || i == 4) {
@@ -112,6 +110,8 @@ export function footer() {
           }
           else
             validation(j + 17)
+            navigate(0)
+            validation(0)
         }
 
         if (i == 5) {
@@ -120,23 +120,24 @@ export function footer() {
           }
           else
             validation(j + 23)
+            navigate(0)
+            validation(0)
         }
-
-        navigate(0)
-        validation(0)
-
       }
     }
   }
+  //cy.scrollTo('bottom')
+  buttonClick('.footer-04__logo')
+  validation(28)
 }
 
 //Function for Validating Share Icons in footer Except
 export function ShareIcons() {
 
   for (var i = 1; i <= 4; i++) {
-    buttonClick('#\\31 6010-230037 > div.bg-black-color > footer > div > div.container > div > div:nth-child(6) > div > div > ul > li:nth-child(' + i + ') > a')
+    //buttonClick('#\\31 6010-230037 > div.bg-black-color > footer > div > div.container > div > div:nth-child(6) > div > div > ul > li:nth-child(' + i + ') > a')
     domValidation('#\\31 6010-230037 > div.bg-black-color > footer > div > div.container > div > div:nth-child(6) > div > div > ul > li:nth-child(' + i + ') > a', i + 10)
-    navigate(0)
-    validation(0)
+    // navigate(0)
+    // validation(0)
   }
 }

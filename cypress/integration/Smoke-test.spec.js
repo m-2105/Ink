@@ -1,6 +1,6 @@
 /// <reference types="cypress' / >
 import '../fixtures/inkforall_url.json'
-import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, ByPassLogin } from '../Page_Objects/ExportFunctions';
+import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, ByPassLogin, domValidation } from '../Page_Objects/ExportFunctions';
 import '../Page_Objects/Local_Storage'
 
 import { Keys, V4 } from '../Page_Objects/Key'
@@ -17,22 +17,22 @@ beforeEach(() => {
 describe('Smoke Test For InkForALl', () => {
     
     //Validating the Testing.inkforAll Link
-    it.only('Verify All Links', () => {
+    it('Verify All Links', () => {
          validation(0)
         // console.log(Keys.Key1+' '+ V4)
          })
     
     //Verifying the All the Links in Header
     it('Verify Header Links', () => {
-        buttonClick('.nav-02__logo_img')  //Function is exported from ExportFuntions.js File 
-        validation(29)                    //Function is exported from ExportFuntions.js File 
+        buttonClick('#\\31 6010-230037 > nav > div > div > div.nav-02__logo > a')  //Function is exported from ExportFuntions.js File 
+        validation(29)                   //Function is exported from ExportFuntions.js File 
         navbar()                         //Function is exported from ExportFuntions.js File 
     })
 
     //Verifying the Ink Free Forever
     it('Verify Use Ink Free Forever Link', () => {
-        buttonClick('.header-23__cta_box > .buttons-set > .buttons-set__list > .buttons-set__item > .button > .button__text')  //Function is exported from ExportFuntions.js File 
-        validation(7)//Function is exported from ExportFuntions.js File 
+       // buttonClick('.header-23__cta_box > .buttons-set > .buttons-set__list > .buttons-set__item > .button > .button__text')  //Function is exported from ExportFuntions.js File 
+        domValidation('#header-23-349661 > div:nth-child(2) > header > div > div.header-23__left > div > div.header-23__cta_box > div > ul > li > a',7)//Function is exported from ExportFuntions.js File 
         cy.go('back')
     })
     
