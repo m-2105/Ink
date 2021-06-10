@@ -17,8 +17,7 @@ import '../Page_Objects/Local_Storage'
 //       }
 //   }
 //   cy.request(options)
-//   cy.visit ('ink-test.seo.app/?code=4ds34s-231sed2-123sde-32s2332').then(()=>{
-//     cy.saveLocalStorage()
+
 //   })
 //   // cy.fixture('ByPassLogin').then(function (data) {
 //   //   this.data = data;

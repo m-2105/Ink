@@ -3,12 +3,14 @@ import '../fixtures/inkforall_url.json'
 import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, ByPassLogin } from '../Page_Objects/ExportFunctions';
 import '../Page_Objects/Local_Storage'
 
+import { Keys, V4 } from '../Page_Objects/Key'
+
 before(() => {
     navigate(0)
 })
 
 beforeEach(() => {
-ByPassLogin()
+//cy.ByPassLogin()
 //cy.viewport('iphone-6')
 })
 
@@ -17,6 +19,7 @@ describe('Smoke Test For InkForALl', () => {
     //Validating the Testing.inkforAll Link
     it.only('Verify All Links', () => {
          validation(0)
+        // console.log(Keys.Key1+' '+ V4)
          })
     
     //Verifying the All the Links in Header
