@@ -2,13 +2,14 @@
 import '../fixtures/inkforall_url.json'
 import '../fixtures/ByPassLogin.json'
 import '../Page_Objects/Local_Storage'
+import { Keys } from '../Page_Objects/Local_Storage'
 
 //Function for Saving Local Storage [Will be corrected by tomorrow]
 //  export function ByPassLogin() {
 //   const options = {
 //     method: 'POST',
 //       url: 'https://testing.inkforall.com',
-  
+
 //       body: {
 //         idToken : Cypress.env('Value1'),
 //         accessToken : Cypress.env('Value2'),
@@ -58,17 +59,24 @@ export function validation(n) {
 export function domValidation(Path, n) {
   cy.fixture('inkforall_url').then(function (data) {
     this.data = data;
-    cy.get(Path).should("have.attr", "href").and('contain',this.data[n].testurl);
+    cy.get(Path).should("have.attr", "href").and('contain', this.data[n].testurl);
   })
 }
 
 //Function for Validating all the NavBar items URL
 export function navbar() {
   for (var i = 1; i <= 6; i++) {
-   // buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
-    domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
-    // navigate(0)
-    // validation(0)
+    buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
+
+    if (cy.url().should('contain', 'auth-test.inkforall.com')) {
+      localStorage.setItem("recentLogins", Keys.recentLogins)
+      // cy.ByPassLogin()
+      //buttonClick()
+    }
+    validation(i)
+    // domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
+    navigate(0)
+    validation(0)
   }
 }
 
@@ -110,8 +118,8 @@ export function footer() {
           }
           else
             validation(j + 17)
-            navigate(0)
-            validation(0)
+          navigate(0)
+          validation(0)
         }
 
         if (i == 5) {
@@ -120,13 +128,13 @@ export function footer() {
           }
           else
             validation(j + 23)
-            navigate(0)
-            validation(0)
+          navigate(0)
+          validation(0)
         }
       }
     }
   }
-  //cy.scrollTo('bottom')
+  cy.get('.footer-04__top_wrapper > :nth-child(1)').scrollTo('0%', '90%', { ensureScrollable: false })
   buttonClick('.footer-04__logo')
   validation(28)
 }
