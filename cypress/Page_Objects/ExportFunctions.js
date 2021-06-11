@@ -1,32 +1,7 @@
 /// <reference types="cypress' / >
 import '../fixtures/inkforall_url.json'
-import '../fixtures/ByPassLogin.json'
-import '../Page_Objects/Local_Storage'
-import { Keys } from '../Page_Objects/Local_Storage'
-
-//Function for Saving Local Storage [Will be corrected by tomorrow]
-//  export function ByPassLogin() {
-//   const options = {
-//     method: 'POST',
-//       url: 'https://testing.inkforall.com',
-
-//       body: {
-//         idToken : Cypress.env('Value1'),
-//         accessToken : Cypress.env('Value2'),
-//         user : Cypress.env('Value3'),
-//         refreshToken : Cypress.env('Value4')
-//       }
-//   }
-//   cy.request(options)
-
-//   })
-//   // cy.fixture('ByPassLogin').then(function (data) {
-//   //   this.data = data;
-//   //  for(var i=0; i <= data.length; i++){
-//   //   localStorage.setItem( this.data[i].Key ,this.data[i].Value)
-//   //  }
-//   //  }) 
-//  }
+import './Local_Storage'
+import { Keys } from './Key'
 
 //Function for Navigating URl
 export function navigateURl(url) {
@@ -62,16 +37,22 @@ export function domValidation(Path, n) {
     cy.get(Path).should("have.attr", "href").and('contain', this.data[n].testurl);
   })
 }
+export function BypassLogin(){
+  Cypress.on('window:load', (e) => {
+    if (e.location.host === 'auth-test.inkforall.com') {
+   localStorage.setItem("recentLogins", Keys.recentLogins)
+buttonClick('.recent-login-button-container')
+    }
+  })
+}
 
 //Function for Validating all the NavBar items URL
 export function navbar() {
   for (var i = 1; i <= 6; i++) {
     buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
-
-    if (cy.url().should('contain', 'auth-test.inkforall.com')) {
-      localStorage.setItem("recentLogins", Keys.recentLogins)
-      // cy.ByPassLogin()
-      //buttonClick()
+    if(cy.url().should('contain','auth-test.inkforall.com')){
+      cy.get('google-login', { timeout: 700000 }).should('be.visible')
+      BypassLogin()
     }
     validation(i)
     // domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
