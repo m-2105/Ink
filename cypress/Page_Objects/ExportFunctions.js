@@ -1,7 +1,7 @@
 /// <reference types="cypress' / >
 import '../fixtures/inkforall_url.json'
 import './Local_Storage'
-import { Keys,Auth } from './Key'
+import { Keys} from './Key'
 
 //Function for Navigating URl
 export function navigateURl(url) {

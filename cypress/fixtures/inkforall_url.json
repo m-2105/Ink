@@ -17,21 +17,21 @@
         "index": 2,
         "location": "Header",
         "buttonName": "AI Writing Tools",
-        "testurl": "/writing-tools",
-        "produrl": "https://nkforall.com/writing-tools"
+        "testurl": "https://testing.inkforall.com/writing-tools",
+        "produrl": "https://inkforall.com/writing-tools"
     },
     {
         "index": 3,
         "location": "Header",
         "buttonName": "Resources",
-        "testurl": "/questions-answers",
+        "testurl": "https://testing.inkforall.com/questions-answers",
         "produrl": "https://inkforall.com/questions-answers"
     },
     {
         "index": 4,
         "location": "Header",
         "buttonName": "Pricing",
-        "testurl": "/pricing",
+        "testurl": "https://testing.inkforall.com/pricing",
         "produrl": "https:/inkforall.com/pricing"
     },
     {
