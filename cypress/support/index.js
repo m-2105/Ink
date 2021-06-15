@@ -15,11 +15,14 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
-Cypress.on('uncaught:exception', (err, runnable) => {
-    // returning false here prevents Cypress from
-    // failing the test
-    return false
-  })
+// cy.on('net::ERR_EMPTY_RESPONSE', (err, runnable) => {
+//   ByPassLogin()
+//   }
+// cy.catch((err) => {
+//   cy.console.log(err.message);
+// })
+// before(()=>{
+// Cypress.on('uncaught:exception', (err, runnable) => {
+//     return false
+//   })  
+// })

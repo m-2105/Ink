@@ -1,11 +1,20 @@
 import '../fixtures/inkforall_url.json'
 import './Key'
 
-// // Retrieving data:
-// let text = localStorage.getItem("user");
-// let obj = JSON.parse(text);
-// document.getElementById("demo").innerHTML = obj.name;
+let LOCAL_STORAGE_MEMORY = {};
 
+Cypress.Commands.add("saveLocalStorage", () => {
+  Object.keys(localStorage).forEach(key => {
+    LOCAL_STORAGE_MEMORY[key] = localStorage[key];
+    console.log(key)
+  });
+});
+
+Cypress.Commands.add("restoreLocalStorage", () => {
+  Object.keys(LOCAL_STORAGE_MEMORY).forEach(key => {
+    localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
+  });
+});
 
 //Storing Data
 Cypress.Commands.add("ByPassLogin", () => {

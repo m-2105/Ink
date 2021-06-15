@@ -1,13 +1,23 @@
 {
-  "devDependencies": {
-    "cypress": "^7.4.0",
-    "cypress-xpath": "^1.6.2"
-  },
-  "scripts": {
-    "test": "Cypress run",
-    "cypress": "Cypress open",
-    "cy:run:chrome": "cypress run --browser chrome",
-    "cy:run:firefox": "cypress run --browser firefox",
-    "cy:run:edge": "cypress run --browser edge"
-  }
+    "version": "1.0.0",
+    "main": "index.js",
+    "devDependencies": {
+        "cypress": "^7.5.0",
+        "cypress-xpath": "^1.6.2"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "ci-info": "^3.2.0",
+        "cypress": "^3.8.3"
+    },
+    "scripts": {
+        "test": "Cypress run",
+        "cypress": "Cypress open",
+        "cy:run:chrome": "cypress run --browser chrome",
+        "cy:run:firefox": "cypress run --browser firefox",
+        "cy:run:edge": "cypress run --browser edge"
+    }
 }

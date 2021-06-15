@@ -1,13 +1,12 @@
 /// <reference types="cypress' / >
 import '../fixtures/inkforall_url.json'
 import './Local_Storage'
-import { Keys } from './Key'
+import { Keys,Auth } from './Key'
 
 //Function for Navigating URl
 export function navigateURl(url) {
   cy.visit(url)
 }
-
 //Function for Navigating URl though fixture file 
 export function navigate(n) {
   cy.fixture('inkforall_url').then(function (data) {
@@ -37,25 +36,26 @@ export function domValidation(Path, n) {
     cy.get(Path).should("have.attr", "href").and('contain', this.data[n].testurl);
   })
 }
-export function BypassLogin(){
-  Cypress.on('window:load', (e) => {
-    if (e.location.host === 'auth-test.inkforall.com') {
-   localStorage.setItem("recentLogins", Keys.recentLogins)
-buttonClick('.recent-login-button-container')
-    }
-  })
-}
 
-//Function for Validating all the NavBar items URL
+// //Function for Validating all the NavBar items URL
 export function navbar() {
   for (var i = 1; i <= 6; i++) {
     buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
-    if(cy.url().should('contain','auth-test.inkforall.com')){
-      cy.get('google-login', { timeout: 700000 }).should('be.visible')
-      BypassLogin()
-    }
-    validation(i)
-    // domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
+    // if(cy.location('href')==Auth){
+    //   localStorage.setItem("recentLogins", Keys.recentLogins)
+    //       }
+    Cypress.on('window:load', (e) => {
+      if (e.location.host === 'auth-test.inkforall.com') {
+     e.localStorage.setItem("recentLogins", Keys.recentLogins)
+      }
+    })
+  if(i==1){
+   cy.reload()
+      buttonClick('.recent-login-button-container')
+      
+  }
+   validation(i)
+  //  domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
     navigate(0)
     validation(0)
   }

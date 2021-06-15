@@ -1,25 +1,31 @@
 /// <reference types="cypress' / >
+
 import '../fixtures/inkforall_url.json'
 import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, ByPassLogin, domValidation } from '../Page_Objects/ExportFunctions';
 import '../Page_Objects/Local_Storage'
 
-import { Keys, V4 } from '../Page_Objects/Key'
+// before(() => {
+//    cy.restoreLocalStorage()
+//   })
+//   beforeEach(()=>{
+//       cy.saveLocalStorage()
+//     })
+describe('Smoke Test For InkForAll', () => {
 
-before(() => {
-    navigate(0)
-})
-
-describe('Smoke Test For InkForALl', () => {
-    
     //Validating the Testing.inkforAll Link
     it('Verify All Links', () => {
-         validation(0)
-        // console.log(Keys.Key1+' '+ V4)
-         })
-    
+        try {
+            navigate(0)
+        }
+        catch (err) {
+            cy.console.log(err.message);
+        }
+        console.log('first it is running fine')
+        validation(0)
+    })
+
     //Verifying the All the Links in Header
-    it.only('Verify Header Links', () => {
-        cy.window()
+    it('Verify Header Links', () => {
         buttonClick('#\\31 6010-230037 > nav > div > div > div.nav-02__logo > a')  //Function is exported from ExportFuntions.js File 
         validation(29)                   //Function is exported from ExportFuntions.js File 
         navbar()                         //Function is exported from ExportFuntions.js File 
@@ -27,11 +33,12 @@ describe('Smoke Test For InkForALl', () => {
 
     //Verifying the Ink Free Forever
     it('Verify Use Ink Free Forever Link', () => {
-       // buttonClick('.header-23__cta_box > .buttons-set > .buttons-set__list > .buttons-set__item > .button > .button__text')  //Function is exported from ExportFuntions.js File 
-        domValidation('#header-23-349661 > div:nth-child(2) > header > div > div.header-23__left > div > div.header-23__cta_box > div > ul > li > a',7)//Function is exported from ExportFuntions.js File 
-        cy.go('back')
+        console.log('second it is running fine')
+        // buttonClick('.header-23__cta_box > .buttons-set > .buttons-set__list > .buttons-set__item > .button > .button__text')  //Function is exported from ExportFuntions.js File 
+        domValidation('#header-23-349661 > div:nth-child(2) > header > div > div.header-23__left > div > div.header-23__cta_box > div > ul > li > a', 7)//Function is exported from ExportFuntions.js File 
+        navigate(0)
     })
-    
+
     // //Verifying All the Download Apps Links
     it('Verify Download Apps Links', () => {
         downloadApp('.header-61__cta_box > .buttons-set > .buttons-set__list > :nth-child(', '.header-61__text > p > a')  //Function is exported from ExportFuntions.js File 
