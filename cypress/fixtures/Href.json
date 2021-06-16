@@ -1,20 +1,158 @@
 [
     {
         "index": 0,
-        "location": "Pricing",
-        "buttonName": "GET INK PRO UNIMITED",
-        "linkAddress": "https://auth-test.inkforall.com/?next=https://ink-test.seo.app/paymentonboarding/2&referrer=testing.inkforall.com&ink_visit_id=60c93f6b0db96065a04e8269&session_id=qsnRqo6g"  
+        "location": "Privacy Policy",
+        "path": ".content_box > div > :nth-child(1) > a",
+        "linkAddress": "https://inkforall.com/"
     },
     {
         "index": 1,
-        "location": "Pricing",
-        "buttonName": "GET INK PRO",
-        "linkAddress": "https://auth-test.inkforall.com/?next=https://ink-test.seo.app/paymentonboarding/2&referrer=testing.inkforall.com&ink_visit_id=60c93f6b0db96065a04e8269&session_id=qsnRqo6g"  
+        "location": "Privacy Policy",
+        "path": "div > :nth-child(3) > a",
+        "linkAddress": "mailto:legal@inkco.co"
     },
     {
         "index": 2,
-        "location": "Pricing",
-        "buttonName": "REQUEST CUSTOM PLAN",
-        "linkAddress": "https://auth-test.inkforall.com/?next=https://ink-test.seo.app/paymentonboarding/2&referrer=testing.inkforall.com&ink_visit_id=60c93f6b0db96065a04e8269&session_id=qsnRqo6g"  
+        "location": "Privacy Policy",
+        "path": ":nth-child(17) > a",
+        "linkAddress": "http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager.html"
+    },
+    {
+        "index": 3,
+        "location": "Privacy Policy",
+        "path": "#text-08-171621 > div:nth-child(2) > section > div > div > div:nth-child(3) > div > div > p:nth-child(29) > a:nth-child(2)",
+        "linkAddress": "http://www.networkadvertising.org/managing/opt_out.asp"
+    },
+    {
+        "index": 4,
+        "location": "Privacy Policy",
+        "path": "#text-08-171621 > div:nth-child(2) > section > div > div > div:nth-child(3) > div > div > p:nth-child(31) > a",
+        "linkAddress": "http://www.aboutads.info/choices/"
+    },
+    {
+        "index": 5,
+        "location": "Privacy Policy",
+        "path": ":nth-child(31) > a",
+        "linkAddress": "http://www.aboutads.info/choices/"
+    },
+    {
+        "index": 6,
+        "location": "Privacy Policy",
+        "path": ":nth-child(25) > a",
+        "linkAddress": "https://www.privacyshield.gov/welcome"
+    },
+    {
+        "index": 7,
+        "location": "Privacy Policy",
+        "path": ":nth-child(27) > a",
+        "linkAddress": "mailto:legal@inkco.co"
+    },
+    {
+        "index": 8,
+        "location": "Privacy Policy",
+        "path": "#text-08-708081 > div:nth-child(2) > section > div > div > div:nth-child(3) > div > div > p:nth-child(29) > a",
+        "linkAddress": "mailto:legal@inkco.co"
+    },
+    {
+        "index": 9,
+        "location": "Privacy Policy",
+        "path": "#text-08-708081 > div:nth-child(2) > section > div > div > div:nth-child(3) > div > div > p:nth-child(33) > a:nth-child(1)",
+        "linkAddress": "mailto:legal@inkco.co"
+    },
+    {
+        "index": 10,
+        "location": "Privacy Policy",
+        "path": "#text-08-708081 > div:nth-child(2) > section > div > div > div:nth-child(3) > div > div > p:nth-child(33) > a:nth-child(2)",
+        "linkAddress": "https://blog.inkforall.com/acknowledgement-or-acknowledgment"
+    },
+    {
+        "index": 11,
+        "location": "Privacy Policy",
+        "path": "#text-08-708081 > div:nth-child(2) > section > div > div > div:nth-child(3) > div > div > p:nth-child(33) > a:nth-child(3)",
+        "linkAddress": "https://www.bbb.org/EU-privacy-shield/for-eu-consumers/"
+    },
+    {
+        "index": 12,
+        "location": "Privacy Policy",
+        "path": "#text-08-708081 > div:nth-child(2) > section > div > div > div:nth-child(3) > div > div > p:nth-child(33) > a:nth-child(4)",
+        "linkAddress": "https://www.privacyshield.gov/article?id=F-The-Arbitration-Panel"
+    },
+    {
+        "index": 13,
+        "location": "Privacy Policy",
+        "path": ":nth-child(41) > a",
+        "linkAddress": "mailto:legal@inkco.co"
+    },
+    {
+        "index": 14,
+        "location": "Privacy Policy",
+        "path": ":nth-child(43) > a",
+        "linkAddress": "mailto:legal@inkco.co"
+    },
+    {
+        "index": 15,
+        "location": "Privacy Policy",
+        "path": ":nth-child(45) > a",
+        "linkAddress": "mailto:legal@inkco.co"
+    },
+    {
+        "index": 16,
+        "location": "Privacy Policy",
+        "path": "#text-08-708081 > div:nth-child(2) > section > div > div > div:nth-child(3) > div > div > p:nth-child(47) > a:nth-child(1)",
+        "linkAddress": "https://blog.inkforall.com/anytime-vs-any-time"
+    },
+    {
+        "index": 17,
+        "location": "Privacy Policy",
+        "path": "#text-08-708081 > div:nth-child(2) > section > div > div > div:nth-child(3) > div > div > p:nth-child(47) > a:nth-child(2)",
+        "linkAddress": "mailto:legal@inkco.co"
+    },
+    {
+        "index": 18,
+        "location": "Press",
+        "path": "#posts-01-388161 > div:nth-child(2) > div > div > div.posts-01__wrapper > a:nth-child(1)",
+        "linkAddress": "https://blog.inkforall.com/assets/Logos-20190703T121819Z-001.zip"
+    },
+    {
+        "index": 19,
+        "location": "Press",
+        "path": "#posts-01-388161 > div:nth-child(2) > div > div > div.posts-01__wrapper > a:nth-child(2)",
+        "linkAddress": "https://blog.inkforall.com/assets/Product-Screen-shot-20190704T220612Z-001.zip"
+    },
+    {
+        "index": 20,
+        "location": "Press",
+        "path": "#posts-01-388161 > div:nth-child(2) > div > div > div.posts-01__wrapper > a:nth-child(3)",
+        "linkAddress": "https://blog.inkforall.com/assets/ink-crowd-content-blog-growith-case-study-2020.pdf"
+    },
+    {
+        "index": 21,
+        "location": "Press",
+        "path": "#posts-01-388161 > div:nth-child(2) > div > div > div.posts-01__wrapper > a:nth-child(4)",
+        "linkAddress": "https://blog.inkforall.com/assets/INK-Data-Study.pdf"
+    },
+    {
+        "index": 22,
+        "location": "Press",
+        "path": "#posts-01-388161 > div:nth-child(2) > div > div > div.posts-01__wrapper > a:nth-child(5)",
+        "linkAddress": "https://blog.inkforall.com/assets/INK-Content-Rank-Theory-Whitepaper.pdf"
+    },
+    {
+        "index": 23,
+        "location": "Press",
+        "path": "#posts-01-388161 > div:nth-child(2) > div > div > div.posts-01__wrapper > a:nth-child(6)",
+        "linkAddress": "https://blog.inkforall.com/assets/Executive-photos.zip"
+    },
+    {
+        "index": 24,
+        "location": "Press",
+        "path": "#posts-01-388161 > div:nth-child(2) > div > div > div.posts-01__wrapper > a:nth-child(7)",
+        "linkAddress": "https://blog.inkforall.com/assets/INK-Launch-Announcement-Press-Release-1.docx"
+    },
+    {
+        "index": 25,
+        "location": "Press",
+        "path": "#posts-01-388161 > div:nth-child(2) > div > div > div.posts-01__link > div > div > ul > li > a",
+        "linkAddress": "https://blog.inkforall.com/assets/Press-Kit-v4.zip"
     }
 ]

@@ -939,39 +939,3 @@ export var Keys =
     next : "https://ink-test.seo.app/downloads?referrer=testing.inkforall.com&ink_visit_id=60c69e26e0733a5e1a5aa0bf&session_id=mbA8WRY0",
     authorization : V6
 }
-// cy.fixture('inkforall_url').then(function (data,x) {
-//     this.data = data;
-//     x =this.data[a].location})
-// export var describe = {
-  
-//   0:this.data[0].location, 
-//   1:"Header -> Ink Editor",
-//   2:"Header -> AI Writing Tools",
-//   3:"Header -> Resources",
-//   4:"Header -> Home",
-//   5:"",
-//   6:"",
-//   7:"",
-//   8:"",
-//   9:"",
-//   10:"",
-//   11:"",
-//   12:"",
-//   13:"",
-//   14:"",
-//   15:"",
-//   16:"",
-//   17:"",
-//   18:"",
-//   19:"",
-//   20:"",
-//   21:"",
-//   22:"",
-//   23:"",
-//   24:"",
-//   26:"",
-//   27:"",
-//   28:"",
-//   29:"",
-//   30:""
-// }

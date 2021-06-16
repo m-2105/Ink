@@ -30,11 +30,8 @@ export function validation(n) {
   })
 }
 //Function for Validating URl from fixture file With DOM VIEW
-export function domValidation1(Path, n) {
-  cy.fixture('Href').then(function (data) {
-    this.data = data;
-    cy.get(Path).should("have.attr", "href").and('contain', this.data[n].linkAddress);
-  })
+export function domValidation1(Path,Hint) {
+  cy.get(Path).should("have.attr", "href").and('include', Hint);
 }
 //Function for Validating URl from fixture file With DOM VIEW
 export function domValidation(Path, n) {
@@ -43,33 +40,32 @@ export function domValidation(Path, n) {
     cy.get(Path).should("have.attr", "href").and('contain', this.data[n].testurl);
   })
 }
-// //Function for Validating all the NavBar items URL without keys
-export function navbar1() {
-  for (var i = 1; i <= 6; i++) {
-    buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
-   validation(i)
-   navigate(0)
-    validation(0)
-  }
-}
+// // //Function for Validating all the NavBar items URL without keys
+// export function navbar1() {
+//   for (var i = 1; i <= 6; i++) {
+//     buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
+//    validation(i)
+//    navigate(0)
+//     validation(0)
+//   }
+// }
 // //Function for Validating all the NavBar items URL
-export function navbar() {
+export function navbar(n) {
   for (var i = 1; i <= 6; i++) {
     buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
     Cypress.on('window:load', (e) => {
-      if (e.location.host === 'auth-test.inkforall.com') {
+      if (e.location.host == 'auth-test.inkforall.com') {
      e.localStorage.setItem("recentLogins", Keys.recentLogins)
       }
     })
-  if(i==1){
-   cy.reload()
-      buttonClick('.recent-login-button-container')
-      
+   if(i==1){
+    cy.reload()
+    buttonClick('.recent-login-button-container')
   }
    validation(i)
   //  domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
-    navigate(0)
-    validation(0)
+    navigate(n)
+    validation(n)
   }
 }
 
@@ -85,7 +81,7 @@ export function downloadApp(Path, here) {
 }
 
 //Function for Validating all the Items in footer Except Share Icons
-export function footer() {
+export function footer(n) {
 
   for (var i = 2; i <= 4; i++) {
     if (i == 2 || i == 4) {
@@ -97,8 +93,8 @@ export function footer() {
         if (i == 4)
           validation(j + 21)
 
-        navigate(0)
-        validation(0)
+        navigate(n)
+        validation(n)
       }
     }
     else {
@@ -111,8 +107,8 @@ export function footer() {
           }
           else
           validation(j + 17)
-          navigate(0)
-          validation(0)
+          navigate(n)
+          validation(n)
         }
 
         if (i == 5) {
@@ -121,8 +117,8 @@ export function footer() {
           }
           else
             validation(j + 23)
-          navigate(0)
-          validation(0)
+          navigate(n)
+          validation(n)
         }
       }
     }
@@ -142,14 +138,35 @@ export function ShareIcons() {
     // validation(0)
   }
 }
-export function describeTEXT(a) {
-  cy.fixture('inkforall_url').then(function (data,x) {
+export function describeTEXT(n) {
+  cy.fixture('inkforall_url').then(function (data) {
     this.data = data;
-    x =this.data[a].location;
+  var x = this.data[n].buttonName
+  return x;
 })
+  
 }
-export function PricingBox(){
+export function PricingBox(b){
+  console.log(b)
   for(var i=1; i<=3; i++){
-    domValidation1('#has-data > div:nth-child('+i+') > div > a',i-1)
+    domValidation1('#has-data > div:nth-child('+i+') > div > a','auth-test.inkforall.com')
   }
 }
+export function PressZip(b){
+  cy.fixture('Href').then(function (data,x) {
+    this.data = data;
+    for(var i=0; i<=7; i++){
+      domValidation1(this.data[i+18].path,this.data[i+18].linkAddress)
+    }
+  domValidation1(this.data[25].path,this.data[25].linkAddress)
+})
+}
+export function label(){
+  cy.fixture('Href').then(function (data,x) {
+    this.data = data;
+    for(var i=0; i<=17; i++){
+      domValidation1(this.data[i].path,this.data[i].linkAddress)
+    }
+})
+}
+

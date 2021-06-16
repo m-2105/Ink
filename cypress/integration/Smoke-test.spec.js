@@ -1,42 +1,38 @@
 /// <reference types="cypress' / >
 
 import '../fixtures/inkforall_url.json'
-import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, domValidation, PricingBox, navbar1 } from '../Page_Objects/ExportFunctions';
+import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, domValidation, PricingBox, navbar1, domValidation1, label, describeTEXT, PressZip } from '../Page_Objects/ExportFunctions';
 import { Keys } from '../Page_Objects/Key';
 import '../Page_Objects/Local_Storage'
 
 var a = 0;
 var b;
-var x = "Home";
-for (a = 4; a <= 30; a++) {
+//var x = "Home";
+for (a = 0; a <= 31; a++) {
+    if (a != 11 || a != 12 || a != 13 || a != 14 || a != 15 || a != 17|| a != 18|| a != 19|| a != 24|| a != 27|| a != 28|| a != 29|| a != 30) {
 
-    if (a != 11 || a != 12 || a != 13 || a != 14 || a != 15) {
-
-        describe('Smoke Test ' + x + ' Page', () => {
+        describe('Smoke Test For Page : ' + (a+1), () => {
             var b = a;
             //Before Hook will navigate to the testURL at index 'a' written in inkforall_url.json
             before(() => {
                 navigate(b)
-                if (b == 1 || b == 5 || b == 6 || b == 7 || b == 8 || b == 9 || b == 17 || b == 20 || b == 21 || b == 22 || b == 23 || b == 25) {
-                    Cypress.on('window:load', (e) => {
-                        if (e.location.host === 'auth-test.inkforall.com' || e.location.host === 'auth.inkforall.com') {
-                            e.localStorage.setItem("recentLogins", Keys.recentLogins)
-                        }
-                    })
+                if (b == 1 || b == 5 || b == 6 || b == 7 || b == 8 || b == 9 || b == 17 || b == 20 || b == 21 || b == 22 || b == 23 || b == 25){
+                  Cypress.on('window:load', (e) => {
+                    if (e.location.host == 'auth-test.inkforall.com' || e.location.host == 'auth.inkforall.com') {
+                        e.localStorage.setItem("recentLogins", Keys.recentLogins)
+                    }
+                })
                     cy.reload()
-                    buttonClick('.recent-login-button-container')
+                    buttonClick('.recent-login-button-container')  
                 }
             })
 
-            //Validating All testURLS
-            // it('Verify All Links', () => {
-            //     validation(b)
-            // //     cy.fixture('inkforall_url').then(function (data) {
-            // //         this.data = data;
-            // //     x = this.data[a].buttonName
-            // // })
-                
-            // })
+            //  Validating All testURLS
+            it('Verify All Links', () => {
+                validation(b)
+                 //  x=describeTEXT(b+1)
+               // console.log(x+'after' )
+            })
 
             if (a == 0 || a == 2 || a == 3 || a == 4 || a == 16 || a == 17 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25 || a == 26) {
                 //Verifying the All the Links in Header
@@ -48,16 +44,16 @@ for (a = 4; a <= 30; a++) {
                     validation(29)                   //Function is exported from ExportFuntions.js File 
                 })
             }
-            if (a == 0 || a == 3 ) {
+            if (a == 0 || a == 3 | a == 16 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
                 it('Verify Header Links', () => {
-                    navbar()                         //Function is exported from ExportFuntions.js File 
+                    navbar(b)                         //Function is exported from ExportFuntions.js File 
                 })
             }
-            if ( a == 16 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
-                it('Verify Header Links', () => {
-                    navbar1()                     //Function is exported from ExportFuntions.js File 
-                })
-            }
+            // if (a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
+            //     it('Verify Header Links', () => {
+            //         navbar1()                     //Function is exported from ExportFuntions.js File 
+            //     })
+            // }
 
             if (a == 0) {
                 //Verifying the Ink Free Forever
@@ -85,7 +81,7 @@ for (a = 4; a <= 30; a++) {
             if (a == 0 || a == 2 || a == 3 || a == 4 || a == 17 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25 || a == 26) {
                 //Verifying All the Links in Footer except Share Icons
                 it('Verify Footer Links', () => {
-                    footer()     //Function is exported from ExportFuntions.js File 
+                    footer(b)     //Function is exported from ExportFuntions.js File 
                 })
 
                 //Verfiying the Share Icons in footer
@@ -98,7 +94,7 @@ for (a = 4; a <= 30; a++) {
             //     it('Verify Download on Windows', () => {
             //         buttonClick(':nth-child(1) > .downloadCardFooter > .MuiButtonBase-root > .MuiButton-label')
             //          cy.request({
-            //             method: 'POST',
+            //             method: 'GET',
             //             url: 'https://api-test.ink.seo.app/core/api/v2.0/downloads/generate-link?platform=windows&?ink_visit_id=60c93f6b0db96065a04e8269&session_id=mpFfbD77',
             //              body: {
             //             authorization : Keys.authorization
@@ -109,24 +105,24 @@ for (a = 4; a <= 30; a++) {
             //               expect(response.body).to.have.property('authorization', Keys.authorization)
             //             }
             //           )
-                   
+
             //      cy.get('#arrow-chrome > img', { timeout: 700000 }).should('be.visible')
             //     })
 
-                // it('Verify Download on MAC', () => {
-                //     buttonClick(':nth-child(2) > .downloadCardFooter > .MuiButtonBase-root')
-                //     cy.get('#arrow-chrome > img', { timeout: 700000 }).should('be.visible')
-                // })
+            // it('Verify Download on MAC', () => {
+            //     buttonClick(':nth-child(2) > .downloadCardFooter > .MuiButtonBase-root')
+            //     cy.get('#arrow-chrome > img', { timeout: 700000 }).should('be.visible')
+            // })
 
-                // it('Verify Download on Linux', () => {
-                //     buttonClick(':nth-child(3) > .downloadCardFooter > .MuiButtonBase-root')
-                //     cy.get('#arrow-chrome > img', { timeout: 700000 }).should('be.visible')
-                // })
-                //class : MuiButtonBase-root MuiButton-root MuiButton-text jss10 jss11 undefined Mui-disabled jss16 Mui-disabled
-           // }
+            // it('Verify Download on Linux', () => {
+            //     buttonClick(':nth-child(3) > .downloadCardFooter > .MuiButtonBase-root')
+            //     cy.get('#arrow-chrome > img', { timeout: 700000 }).should('be.visible')
+            // })
+            //class : MuiButtonBase-root MuiButton-root MuiButton-text jss10 jss11 undefined Mui-disabled jss16 Mui-disabled
+            // }
             if (a == 3) {
                 //Verfiying the Share Icons in footer
-                it.only("Verify Join Us Live Button", () => {
+                it("Verify Join Us Live Button", () => {
                     navigate(3)
                     validation(3)
                     buttonClick('[style="text-align:center; margin-bottom: 30px;"] > button')
@@ -137,39 +133,32 @@ for (a = 4; a <= 30; a++) {
             if (a == 16) {
                 //Verfiying the Share Icons in footer
                 it("Verify DOWNLOAD INK It's Free", () => {
+                    navigate(b)
                     buttonClick('#download_as > .button__text')
                     // buttonClick('.recent-login-button-container')
                     validation(1)
                 })
             }
-            if (a == 17 || a==4) {
-                it.only("Verify ALL 3 Button on PRCING page i.e.[GET INK PRO UNLIMITED, GET INK PRO, REQUEST CUSTOM PLAN]", () => {
-                  PricingBox()
+            if (a == 17 || a == 4) {
+                it("Verify [GET INK PRO UNLIMITED, GET INK PRO, REQUEST CUSTOM PLAN] Buttons", () => {
+                    PricingBox(b)
                 })
-                
-                it.only('Verify Try Ink Now', () => {
-                    buttonClick(':nth-child(3) > .btn')
-                    validation(0)
+
+                it('Verify Try Ink Now', () => {
+                    navigate(a)
+                    domValidation1(':nth-child(3) > .btn', 'https://ink.seo.app/downloads?')
                 })
             }
-            // if (a == 20) {
-            //     //Verfiying the Share Icons in footer
-            //     it('Verify Download on Windows', () => {
-            //         buttonClick('.content_box > div > :nth-child(1) > a')
-            //         validation()
-            //     })
-            //     //Verfiying the Share Icons in footer
-            //     it('Verify legal@inkco.co', () => {
-            //         buttonClick('div > :nth-child(3) > a')
-            //         validation()
-            //     })
-            //     //Verfiying the Share Icons in footer
-            //     it('Verify here label', () => {
-            //         buttonClick(':nth-child(17) > a')
-            //     })
-
-            // }
+            if(a == 20) {
+                it('Verify All the Labels In Pricing Page', () => {
+                    label()
+                })
+            }
+            if(a == 25) {
+                it('Verify All Dowload options', () => {
+                    PressZip()
+                })
+            }
         })
     }
-
 }
