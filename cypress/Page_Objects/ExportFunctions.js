@@ -1,5 +1,6 @@
 /// <reference types="cypress' / >
 import '../fixtures/inkforall_url.json'
+import '../fixtures/Href.json'
 import './Local_Storage'
 import { Keys} from './Key'
 
@@ -28,7 +29,13 @@ export function validation(n) {
     cy.url().should('contain', this.data[n].testurl)
   })
 }
-
+//Function for Validating URl from fixture file With DOM VIEW
+export function domValidation1(Path, n) {
+  cy.fixture('Href').then(function (data) {
+    this.data = data;
+    cy.get(Path).should("have.attr", "href").and('contain', this.data[n].linkAddress);
+  })
+}
 //Function for Validating URl from fixture file With DOM VIEW
 export function domValidation(Path, n) {
   cy.fixture('inkforall_url').then(function (data) {
@@ -49,9 +56,6 @@ export function navbar1() {
 export function navbar() {
   for (var i = 1; i <= 6; i++) {
     buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
-    // if(cy.location('href')==Auth){
-    //   localStorage.setItem("recentLogins", Keys.recentLogins)
-    //       }
     Cypress.on('window:load', (e) => {
       if (e.location.host === 'auth-test.inkforall.com') {
      e.localStorage.setItem("recentLogins", Keys.recentLogins)
@@ -106,7 +110,7 @@ export function footer() {
             domValidation(':nth-child(' + i + ') > .footer-04__list > :nth-child(' + j + ') > .footer-04__link', j + 17)
           }
           else
-            validation(j + 17)
+          validation(j + 17)
           navigate(0)
           validation(0)
         }
@@ -138,9 +142,14 @@ export function ShareIcons() {
     // validation(0)
   }
 }
-
-// export function PricingBox(){
-//   for(var i=1; i<=3; i++){
-//     buttonClick(':nth-child('+i+') > .my_pricing_box > .btn')
-//   }
-// }
+export function describeTEXT(a) {
+  cy.fixture('inkforall_url').then(function (data,x) {
+    this.data = data;
+    x =this.data[a].location;
+})
+}
+export function PricingBox(){
+  for(var i=1; i<=3; i++){
+    domValidation1('#has-data > div:nth-child('+i+') > div > a',i-1)
+  }
+}

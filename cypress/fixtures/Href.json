@@ -1,0 +1,20 @@
+[
+    {
+        "index": 0,
+        "location": "Pricing",
+        "buttonName": "GET INK PRO UNIMITED",
+        "linkAddress": "https://auth-test.inkforall.com/?next=https://ink-test.seo.app/paymentonboarding/2&referrer=testing.inkforall.com&ink_visit_id=60c93f6b0db96065a04e8269&session_id=qsnRqo6g"  
+    },
+    {
+        "index": 1,
+        "location": "Pricing",
+        "buttonName": "GET INK PRO",
+        "linkAddress": "https://auth-test.inkforall.com/?next=https://ink-test.seo.app/paymentonboarding/2&referrer=testing.inkforall.com&ink_visit_id=60c93f6b0db96065a04e8269&session_id=qsnRqo6g"  
+    },
+    {
+        "index": 2,
+        "location": "Pricing",
+        "buttonName": "REQUEST CUSTOM PLAN",
+        "linkAddress": "https://auth-test.inkforall.com/?next=https://ink-test.seo.app/paymentonboarding/2&referrer=testing.inkforall.com&ink_visit_id=60c93f6b0db96065a04e8269&session_id=qsnRqo6g"  
+    }
+]

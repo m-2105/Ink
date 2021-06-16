@@ -1,4 +1,5 @@
 {
+    "pageLoadTimeout" : 50000,
     "failOnStatusCode": false,
     "options.retryOnNetworkFailure" : true,
     "options.retryOnStatusCodeFailure": true,

@@ -2,7 +2,7 @@
     {
         "index": 0,
         "location": "Header",
-        "buttonName": "Home Page",
+        "buttonName": "Home",
         "testurl": "https://testing.inkforall.com/",
         "produrl": "https://inkforall.com/"
     },
