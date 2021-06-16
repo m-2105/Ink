@@ -1,4 +1,5 @@
 {
+    "failOnStatusCode": false,
     "options.retryOnNetworkFailure" : true,
     "options.retryOnStatusCodeFailure": true,
         "viewportWidth": 1200,

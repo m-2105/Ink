@@ -36,7 +36,15 @@ export function domValidation(Path, n) {
     cy.get(Path).should("have.attr", "href").and('contain', this.data[n].testurl);
   })
 }
-
+// //Function for Validating all the NavBar items URL without keys
+export function navbar1() {
+  for (var i = 1; i <= 6; i++) {
+    buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
+   validation(i)
+   navigate(0)
+    validation(0)
+  }
+}
 // //Function for Validating all the NavBar items URL
 export function navbar() {
   for (var i = 1; i <= 6; i++) {
@@ -130,3 +138,9 @@ export function ShareIcons() {
     // validation(0)
   }
 }
+
+// export function PricingBox(){
+//   for(var i=1; i<=3; i++){
+//     buttonClick(':nth-child('+i+') > .my_pricing_box > .btn')
+//   }
+// }

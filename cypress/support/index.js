@@ -21,8 +21,8 @@ import './commands'
 // cy.catch((err) => {
 //   cy.console.log(err.message);
 // })
-// before(()=>{
-// Cypress.on('uncaught:exception', (err, runnable) => {
-//     return false
-//   })  
-// })
+before(()=>{
+Cypress.on('uncaught:exception', (err, runnable) => {
+    return false
+  })  
+})
