@@ -2,7 +2,7 @@
 import '../fixtures/inkforall_url.json'
 import '../fixtures/Href.json'
 import './Local_Storage'
-import { Keys} from './Key'
+import { Keys } from './Key'
 
 //Function for Navigating URl
 export function navigateURl(url) {
@@ -30,7 +30,7 @@ export function validation(n) {
   })
 }
 //Function for Validating URl from fixture file With DOM VIEW
-export function domValidation1(Path,Hint) {
+export function domValidation1(Path, Hint) {
   cy.get(Path).should("have.attr", "href").and('include', Hint);
 }
 //Function for Validating URl from fixture file With DOM VIEW
@@ -40,30 +40,30 @@ export function domValidation(Path, n) {
     cy.get(Path).should("have.attr", "href").and('contain', this.data[n].testurl);
   })
 }
-// // //Function for Validating all the NavBar items URL without keys
-// export function navbar1() {
-//   for (var i = 1; i <= 6; i++) {
-//     buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
-//    validation(i)
-//    navigate(0)
-//     validation(0)
-//   }
-// }
-// //Function for Validating all the NavBar items URL
+// //Function for Validating all the NavBar items URL without keys
+export function navbar1() {
+  for (var i = 1; i <= 6; i++) {
+    buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
+   validation(i)
+   navigate(0)
+    validation(0)
+  }
+}
+//Function for Validating all the NavBar items URL
 export function navbar(n) {
   for (var i = 1; i <= 6; i++) {
     buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
     Cypress.on('window:load', (e) => {
       if (e.location.host == 'auth-test.inkforall.com') {
-     e.localStorage.setItem("recentLogins", Keys.recentLogins)
+        e.localStorage.setItem("recentLogins", Keys.recentLogins)
       }
     })
-   if(i==1){
-    cy.reload()
-    buttonClick('.recent-login-button-container')
-  }
-   validation(i)
-  //  domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
+    if (i == 1) {
+      cy.reload()
+      buttonClick('.recent-login-button-container')
+    }
+    validation(i)
+    //  domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
     navigate(n)
     validation(n)
   }
@@ -82,7 +82,6 @@ export function downloadApp(Path, here) {
 
 //Function for Validating all the Items in footer Except Share Icons
 export function footer(n) {
-
   for (var i = 2; i <= 4; i++) {
     if (i == 2 || i == 4) {
       for (var j = 1; j <= 2; j++) {
@@ -99,14 +98,15 @@ export function footer(n) {
     }
     else {
       for (var j = 1; j <= 4; j++) {
-        buttonClick(':nth-child(' + i + ') > .footer-04__list > :nth-child(' + j + ') > .footer-04__link')
 
-        if (i == 3) if (i == 4) {
+        if (i == 3) {
           if (j == 1 || j == 2) {
             domValidation(':nth-child(' + i + ') > .footer-04__list > :nth-child(' + j + ') > .footer-04__link', j + 17)
           }
-          else
-          validation(j + 17)
+          else {
+            buttonClick(':nth-child(' + i + ') > .footer-04__list > :nth-child(' + j + ') > .footer-04__link')
+            validation(j + 17)
+          }
           navigate(n)
           validation(n)
         }
@@ -115,8 +115,10 @@ export function footer(n) {
           if (j == 1 || j == 4) {
             domValidation(':nth-child(' + i + ') > .footer-04__list > :nth-child(' + j + ') > .footer-04__link', j + 23)
           }
-          else
+          else {
+            buttonClick(':nth-child(' + i + ') > .footer-04__list > :nth-child(' + j + ') > .footer-04__link')
             validation(j + 23)
+          }
           navigate(n)
           validation(n)
         }
@@ -128,45 +130,41 @@ export function footer(n) {
   validation(28)
 }
 
-//Function for Validating Share Icons in footer Except
+//Function for Validating Share Icons in footer
 export function ShareIcons() {
-
   for (var i = 1; i <= 4; i++) {
-    //buttonClick('#\\31 6010-230037 > div.bg-black-color > footer > div > div.container > div > div:nth-child(6) > div > div > ul > li:nth-child(' + i + ') > a')
     domValidation('#\\31 6010-230037 > div.bg-black-color > footer > div > div.container > div > div:nth-child(6) > div > div > ul > li:nth-child(' + i + ') > a', i + 10)
-    // navigate(0)
-    // validation(0)
   }
 }
 export function describeTEXT(n) {
   cy.fixture('inkforall_url').then(function (data) {
     this.data = data;
-  var x = this.data[n].buttonName
-  return x;
-})
-  
+    var x = this.data[n].buttonName
+    return x;
+  })
+
 }
-export function PricingBox(b){
+export function PricingBox(b) {
   console.log(b)
-  for(var i=1; i<=3; i++){
-    domValidation1('#has-data > div:nth-child('+i+') > div > a','auth-test.inkforall.com')
+  for (var i = 1; i <= 3; i++) {
+    domValidation1('#has-data > div:nth-child(' + i + ') > div > a', 'auth-test.inkforall.com')
   }
 }
-export function PressZip(b){
-  cy.fixture('Href').then(function (data,x) {
+export function PressZip(b) {
+  cy.fixture('Href').then(function (data, x) {
     this.data = data;
-    for(var i=0; i<=7; i++){
-      domValidation1(this.data[i+18].path,this.data[i+18].linkAddress)
+    for (var i = 0; i <= 7; i++) {
+      domValidation1(this.data[i + 18].path, this.data[i + 18].linkAddress)
     }
-  domValidation1(this.data[25].path,this.data[25].linkAddress)
-})
+    domValidation1(this.data[25].path, this.data[25].linkAddress)
+  })
 }
-export function label(){
-  cy.fixture('Href').then(function (data,x) {
+export function label() {
+  cy.fixture('Href').then(function (data, x) {
     this.data = data;
-    for(var i=0; i<=17; i++){
-      domValidation1(this.data[i].path,this.data[i].linkAddress)
+    for (var i = 0; i <= 17; i++) {
+      domValidation1(this.data[i].path, this.data[i].linkAddress)
     }
-})
+  })
 }
 
