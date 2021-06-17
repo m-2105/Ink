@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - master
+      - tl-dev
 
 jobs: 
   ink-cy-pipeline:
@@ -19,6 +20,9 @@ jobs:
         
       - name: Install Pakages
         run: npm install
+
+      - name: Install Cypress
+        run: npm install cypress@7.5.0  
 
       - name: Run Cypress
         run: npm run test   
