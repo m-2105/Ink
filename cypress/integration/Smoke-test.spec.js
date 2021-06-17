@@ -157,7 +157,6 @@ for (a = 0; a <= 31; a++) {
             if (a == 25) {
                 it('Verify All Dowload options', () => {
                     PressZip()
-                    //test by Umer
                 })
             }
         })
