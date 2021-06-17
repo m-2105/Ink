@@ -28,8 +28,5 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           runTests: false
-
-      - name: Run Cypress
-        run: npm run test   
-        
+          build: npm run test  
 
