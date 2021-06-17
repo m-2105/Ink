@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 14.15.0
         
+      - name: Install Pakages
+        run: npm install
+
       - name: Run Cypress
         run: npm run test   
         
