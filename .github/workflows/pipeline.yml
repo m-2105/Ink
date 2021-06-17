@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - master
+      - tl-dev
 
 jobs: 
   ink-cy-pipeline:
@@ -17,10 +18,18 @@ jobs:
         with:
           node-version: 14.15.0
         
-      - name: Install Pakages
+      - name: Install Packages
         run: npm install
 
+      - name: Install Cypress
+        run: npm install cypress@7.5.0  
+
+      - name: Cypress install
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+
       - name: Run Cypress
-        run: npm run test   
+        run: ./node_modules/.bin/cypress run 
         
 
