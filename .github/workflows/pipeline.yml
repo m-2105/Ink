@@ -1,0 +1,23 @@
+name: Cypress test
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs: 
+  ink-cy-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Install Nodejs
+        uses: actions/setup-node@v1   
+        with:
+          node-version: 14.15.0
+        
+      - name: Run Cypress
+        run: npm run test   
+        
+
