@@ -111,16 +111,6 @@ for (a = 0; a <= 30; a++) {
             // })
             //class : MuiButtonBase-root MuiButton-root MuiButton-text jss10 jss11 undefined Mui-disabled jss16 Mui-disabled
             // }
-            if (a == 3) {
-                //Verfiying the Share Icons in footer
-                it("Verify Join Us Live Button", () => {
-                    navigate(3)
-                    validation(3)
-                    buttonClick('[style="text-align:center; margin-bottom: 30px;"] > button')
-                    cy.get('#wj_registration_frame ', { timeout: 700000 }).should('be.visible')
-                    cy.reload()
-                })
-            }
             if (a == 16) {
                 //Verfiying the Share Icons in footer
                 it("Verify DOWNLOAD INK It's Free", () => {
