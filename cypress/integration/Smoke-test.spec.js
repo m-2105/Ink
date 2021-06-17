@@ -1,7 +1,7 @@
 /// <reference types="cypress' / >
 
 import '../fixtures/inkforall_url.json'
-import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, domValidation, PricingBox, navbar1, domValidation1, label, describeTEXT, PressZip } from '../Page_Objects/ExportFunctions';
+import { buttonClick, navbar, navigate, validation, downloadApp, footer, ShareIcons, domValidation, PricingBox, navbar1, domValidation1, label, describeTEXT, PressZip, ShareIcons1, ShareIcons21 } from '../Page_Objects/ExportFunctions';
 import { Keys } from '../Page_Objects/Key';
 import '../Page_Objects/Local_Storage'
 
@@ -11,7 +11,7 @@ var b;
 for (a = 0; a <= 30; a++) {
 
     if (a == 0 || a == 2 || a == 3 || a == 4 || a == 16 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
-        describe('Smoke Test For Page : ' + (a + 1), () => {
+        describe('Smoke Test For Page : ' + a, () => {
             var b = a;
             //Before Hook will navigate to the testURL at index 'a' written in inkforall_url.json
             before(() => {
@@ -35,14 +35,14 @@ for (a = 0; a <= 30; a++) {
                     validation(29)                   //Function is exported from ExportFuntions.js File 
                 })
             }
-            if (a == 0) {
+            if (a == 0 ) {
                 it('Verify Header Links', () => {
                     navbar(b)                         //Function is exported from ExportFuntions.js File 
                 })
             }
-            if (a == 3 | a == 16 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
+            if (a == 3 || a == 16 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
                 it('Verify Header Links', () => {
-                    navbar1()                     //Function is exported from ExportFuntions.js File 
+                    navbar1(b)                     //Function is exported from ExportFuntions.js File 
                 })
             }
 
@@ -77,6 +77,9 @@ for (a = 0; a <= 30; a++) {
 
                 //Verfiying the Share Icons in footer
                 it('Verify ShareIcons Links', () => {
+                    // if(b==21){
+                    //     ShareIcons21()
+                    // }
                     ShareIcons()  //Function is exported from ExportFuntions.js File 
                 })
             }
@@ -114,7 +117,6 @@ for (a = 0; a <= 30; a++) {
             if (a == 16) {
                 //Verfiying the Share Icons in footer
                 it("Verify DOWNLOAD INK It's Free", () => {
-                    validation(b)
                     buttonClick('#download_as > .button__text')
                     // buttonClick('.recent-login-button-container')
                     validation(1)
@@ -122,12 +124,13 @@ for (a = 0; a <= 30; a++) {
             }
             if (a == 17 || a == 4) {
                 it("Verify [GET INK PRO UNLIMITED, GET INK PRO, REQUEST CUSTOM PLAN] Buttons", () => {
-                    navigate(a)
+                    navigate(b)
+                    validation(b)
                     PricingBox(b)
                 })
 
                 it('Verify Try Ink Now', () => {
-                    navigate(a)
+                    // navigate(b)
                     domValidation1(':nth-child(3) > .btn', 'https://ink.seo.app/downloads?')
                 })
             }

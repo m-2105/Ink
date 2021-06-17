@@ -41,12 +41,12 @@ export function domValidation(Path, n) {
   })
 }
 // //Function for Validating all the NavBar items URL without keys
-export function navbar1() {
+export function navbar1(n) {
   for (var i = 1; i <= 6; i++) {
     buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
    validation(i)
-   navigate(0)
-    validation(0)
+   navigate(n)
+    validation(n)
   }
 }
 //Function for Validating all the NavBar items URL
@@ -128,14 +128,17 @@ export function footer(n) {
   cy.get('.footer-04__top_wrapper > :nth-child(1)').scrollTo('0%', '90%', { ensureScrollable: false })
   buttonClick('.footer-04__logo')
   validation(28)
+  navigate(n)
+  validation(n)
 }
 
 //Function for Validating Share Icons in footer
 export function ShareIcons() {
   for (var i = 1; i <= 4; i++) {
-    domValidation('#\\31 6010-230037 > div.bg-black-color > footer > div > div.container > div > div:nth-child(6) > div > div > ul > li:nth-child(' + i + ') > a', i + 10)
+    domValidation('div:nth-child(6) > div > div > ul > li:nth-child(' + i + ') > a', i + 10)
   }
 }
+
 export function describeTEXT(n) {
   cy.fixture('inkforall_url').then(function (data) {
     this.data = data;
