@@ -9,29 +9,29 @@ var a = 0;
 var b;
 //var x = "Home";
 for (a = 0; a <= 31; a++) {
-    if (a != 11 || a != 12 || a != 13 || a != 14 || a != 15 || a != 17|| a != 18|| a != 19|| a != 24|| a != 27|| a != 28|| a != 29|| a != 30) {
+    if (a != 11 || a != 12 || a != 13 || a != 14 || a != 15 || a != 17 || a != 18 || a != 19 || a != 24 || a != 27 || a != 28 || a != 29 || a != 30) {
 
-        describe('Smoke Test For Page : ' + (a+1), () => {
+        describe('Smoke Test For Page : ' + (a + 1), () => {
             var b = a;
             //Before Hook will navigate to the testURL at index 'a' written in inkforall_url.json
             before(() => {
                 navigate(b)
-                if (b == 1 || b == 5 || b == 6 || b == 7 || b == 8 || b == 9 || b == 17 || b == 20 || b == 21 || b == 22 || b == 23 || b == 25){
-                  Cypress.on('window:load', (e) => {
-                    if (e.location.host == 'auth-test.inkforall.com' || e.location.host == 'auth.inkforall.com') {
-                        e.localStorage.setItem("recentLogins", Keys.recentLogins)
-                    }
-                })
+                if (b == 1 || b == 5 || b == 6 || b == 7 || b == 8 || b == 9 || b == 17 || b == 20 || b == 21 || b == 22 || b == 23 || b == 25) {
+                    Cypress.on('window:load', (e) => {
+                        if (e.location.host == 'auth-test.inkforall.com' || e.location.host == 'auth.inkforall.com') {
+                            e.localStorage.setItem("recentLogins", Keys.recentLogins)
+                        }
+                    })
                     cy.reload()
-                    buttonClick('.recent-login-button-container')  
+                    buttonClick('.recent-login-button-container')
                 }
             })
 
             //  Validating All testURLS
             it('Verify All Links', () => {
                 validation(b)
-                 //  x=describeTEXT(b+1)
-               // console.log(x+'after' )
+                //  x=describeTEXT(b+1)
+                // console.log(x+'after' )
             })
 
             if (a == 0 || a == 2 || a == 3 || a == 4 || a == 16 || a == 17 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25 || a == 26) {
@@ -149,14 +149,15 @@ for (a = 0; a <= 31; a++) {
                     domValidation1(':nth-child(3) > .btn', 'https://ink.seo.app/downloads?')
                 })
             }
-            if(a == 20) {
+            if (a == 20) {
                 it('Verify All the Labels In Pricing Page', () => {
                     label()
                 })
             }
-            if(a == 25) {
+            if (a == 25) {
                 it('Verify All Dowload options', () => {
                     PressZip()
+                    //test by Umer
                 })
             }
         })
