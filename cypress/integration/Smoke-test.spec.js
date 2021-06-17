@@ -8,23 +8,14 @@ import '../Page_Objects/Local_Storage'
 var a = 0;
 var b;
 //var x = "Home";
-for (a = 0; a <= 31; a++) {
-    if (a != 11 || a != 12 || a != 13 || a != 14 || a != 15 || a != 17 || a != 18 || a != 19 || a != 24 || a != 27 || a != 28 || a != 29 || a != 30) {
+for (a = 0; a <= 30; a++) {
 
+    if (a == 0 || a == 2 || a == 3 || a == 4 || a == 16 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
         describe('Smoke Test For Page : ' + (a + 1), () => {
             var b = a;
             //Before Hook will navigate to the testURL at index 'a' written in inkforall_url.json
             before(() => {
                 navigate(b)
-                if (b == 1 || b == 5 || b == 6 || b == 7 || b == 8 || b == 9 || b == 17 || b == 20 || b == 21 || b == 22 || b == 23 || b == 25) {
-                    Cypress.on('window:load', (e) => {
-                        if (e.location.host == 'auth-test.inkforall.com' || e.location.host == 'auth.inkforall.com') {
-                            e.localStorage.setItem("recentLogins", Keys.recentLogins)
-                        }
-                    })
-                    cy.reload()
-                    buttonClick('.recent-login-button-container')
-                }
             })
 
             //  Validating All testURLS
@@ -44,16 +35,16 @@ for (a = 0; a <= 31; a++) {
                     validation(29)                   //Function is exported from ExportFuntions.js File 
                 })
             }
-            if (a == 0 || a == 3 | a == 16 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
+            if (a == 0) {
                 it('Verify Header Links', () => {
                     navbar(b)                         //Function is exported from ExportFuntions.js File 
                 })
             }
-            // if (a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
-            //     it('Verify Header Links', () => {
-            //         navbar1()                     //Function is exported from ExportFuntions.js File 
-            //     })
-            // }
+            if (a == 3 | a == 16 || a == 20 || a == 21 || a == 22 || a == 23 || a == 25) {
+                it('Verify Header Links', () => {
+                    navbar1()                     //Function is exported from ExportFuntions.js File 
+                })
+            }
 
             if (a == 0) {
                 //Verifying the Ink Free Forever
@@ -120,20 +111,10 @@ for (a = 0; a <= 31; a++) {
             // })
             //class : MuiButtonBase-root MuiButton-root MuiButton-text jss10 jss11 undefined Mui-disabled jss16 Mui-disabled
             // }
-            if (a == 3) {
-                //Verfiying the Share Icons in footer
-                it("Verify Join Us Live Button", () => {
-                    navigate(3)
-                    validation(3)
-                    buttonClick('[style="text-align:center; margin-bottom: 30px;"] > button')
-                    cy.get('#wj_registration_frame ', { timeout: 700000 }).should('be.visible')
-                    cy.reload()
-                })
-            }
             if (a == 16) {
                 //Verfiying the Share Icons in footer
                 it("Verify DOWNLOAD INK It's Free", () => {
-                    navigate(b)
+                    validation(b)
                     buttonClick('#download_as > .button__text')
                     // buttonClick('.recent-login-button-container')
                     validation(1)
@@ -141,6 +122,7 @@ for (a = 0; a <= 31; a++) {
             }
             if (a == 17 || a == 4) {
                 it("Verify [GET INK PRO UNLIMITED, GET INK PRO, REQUEST CUSTOM PLAN] Buttons", () => {
+                    navigate(a)
                     PricingBox(b)
                 })
 
@@ -161,4 +143,5 @@ for (a = 0; a <= 31; a++) {
             }
         })
     }
+
 }
