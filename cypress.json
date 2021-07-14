@@ -1,8 +1,8 @@
 {
+    "chromeWebSecurity": true ,
     "failOnStatusCode": false,
     "options.retryOnNetworkFailure" : true,
     "options.retryOnStatusCodeFailure": true,
         "viewportWidth": 1200,
-        "viewportHeight": 560,
-    "chromeWebSecurity": false
+        "viewportHeight": 560
 }

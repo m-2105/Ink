@@ -11,8 +11,8 @@ var pageName = ["Home", "Ink Editor", "AI Writing Tools", "Resources", "Pricing"
     "Footer-ink_", "Header-ink_", "here"
 ]
 
-for (a = 0; a <= 30; a++) {
-    if (a == 0 || a == 2 || a == 3 || a == 4 || a == 16 || a == 20 /*|| a == 21*/ || a == 22 || a == 23 || a == 25) {
+for (a = 0; a <= 0; a++) {
+    if (a == 0 || a == 2 || a == 3 || a == 4 || a == 16 || a == 20 /*|| a == 21 */|| a == 22 || a == 23 || a == 25) {
         describe('Smoke Test For ' + pageName[a] + ' Page --[index: ' + a + ']', () => {
             var b = a;
             //Before Hook will navigate to the testURL at index 'a' written in inkforall_url.json
@@ -37,7 +37,7 @@ for (a = 0; a <= 30; a++) {
             }
             if (a == 0 || a == 20 || a == 3 || a == 16 || a == 21 || a == 22 || a == 23 || a == 25) {
                 //Verifying URls of Navbar Items
-                it('Verify URls of Navbar Items', () => {
+                it.only('Verify URls of Navbar Items', () => {
                     navbar(b)                         //Function is exported from ExportFuntions.js File 
                 })
             }
