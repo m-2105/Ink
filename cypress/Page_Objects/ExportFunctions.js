@@ -42,30 +42,40 @@ export function domValidation(Path, n) {
 export function navbar(n) {
   for (var i = 1; i <= 6; i++) {
     buttonClick('.nav-02__list--desktop > :nth-child(' + i + ') > .button')
-   //cy.wait(8000)
+    //cy.wait(8000)
     Cypress.on('window:load', (e) => {
       if (e.location.host == 'auth-test.inkforall.com') {
         e.localStorage.setItem("recentLogins", Keys.recentLogins)
       }
     })
-    //var m= cy.location('host')
-    if (i == 1 /*|| i==5 || i==6*/) {
-     cy.reload()
-      buttonClick('.recent-login-button-container')
+    Cypress.on('window:load', (e) => {
+      if (e.location.host == 'auth.inkforall.com') {
+        e.localStorage.setItem("recentLogins", Keys.recentLogins)
+      }
+    })
+
+    if (i == 1) {
+      if (n == 21) {
+        cy.reload()
+        buttonClick('.recent-button-main')
+      }
+      else {
+        cy.reload()
+        buttonClick('.recent-login-button-container')
+      }
     }
     validation(i)
-    if (/*i == 1 || i==5 */ i==6) {
+    if (/*i == 1 || i==5 */ i == 6 && n!=20) {
       cy.clearLocalStorage()
       cy.clearCookies()
-     }
+    }
     //  domValidation('#\\31 6010-230037 > nav > div > div > div.nav-02__links.js-menu > div.nav-02__list_wrapper > ul.nav-02__list.nav-02__list--desktop > li:nth-child('+i+') > a',i)
     navigate(n)
     validation(n)
   }
-  
 }
 //Function for Validating Download INK for Free Button
-export function InkFree(path,n,k) {
+export function InkFree(path, n, k) {
   buttonClick(path)  //Function is exported from ExportFuntions.js File 
   Cypress.on('window:load', (e) => {
     if (e.location.host == 'auth-test.inkforall.com') {
