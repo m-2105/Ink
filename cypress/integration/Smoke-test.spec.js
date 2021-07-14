@@ -11,7 +11,7 @@ var pageName = ["Home", "Ink Editor", "AI Writing Tools", "Resources", "Pricing"
     "Footer-ink_", "Header-ink_", "here"
 ]
 
-for (a = 4; a <= 30; a++) {
+for (a = 0; a <= 30; a++) {
     if (a == 0 || a == 2 || a == 3 || a == 4 || a == 16 || a == 20 /*|| a == 21*/ || a == 22 || a == 23 || a == 25) {
         describe('Smoke Test For ' + pageName[a] + ' Page --[index: ' + a + ']', () => {
             var b = a;
