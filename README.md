@@ -31,7 +31,6 @@ git request-pull [-p] <start> <url> [<end>]
 - [Fixtures](#fixtures)
 - [Integration](#integration)
 - [Page_Ojects](#page_objects)
-- [Support](#support)
 - [.json Files](.json_files)
 
 ### Fixtures
