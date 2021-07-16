@@ -70,38 +70,6 @@ for (a = 0; a <= 0; a++) {
                     ShareIcons()  //Function is exported from ExportFuntions.js File 
                 })
             }
-            // if (a == 1 || a == 7) {
-            //     //Verfiying the Share Icons in footer
-            //     it('Verify Download on Windows', () => {
-            //         buttonClick(':nth-child(1) > .downloadCardFooter > .MuiButtonBase-root > .MuiButton-label')
-            //          cy.request({
-            //             method: 'GET',
-            //             url: 'https://api-test.ink.seo.app/core/api/v2.0/downloads/generate-link?platform=windows&?ink_visit_id=60c93f6b0db96065a04e8269&session_id=mpFfbD77',
-            //              body: {
-            //             authorization : Keys.authorization
-            //             },
-            //           }).then(
-            //             (response) => {
-            //                 console.log(response);
-            //               expect(response.body).to.have.property('authorization', Keys.authorization)
-            //             }
-            //           )
-
-            //      cy.get('#arrow-chrome > img', { timeout: 700000 }).should('be.visible')
-            //     })
-
-            // it('Verify Download on MAC', () => {
-            //     buttonClick(':nth-child(2) > .downloadCardFooter > .MuiButtonBase-root')
-            //     cy.get('#arrow-chrome > img', { timeout: 700000 }).should('be.visible')
-            // })
-
-            // it('Verify Download on Linux', () => {
-            //     buttonClick(':nth-child(3) > .downloadCardFooter > .MuiButtonBase-root')
-            //     cy.get('#arrow-chrome > img', { timeout: 700000 }).should('be.visible')
-            // })
-            //change in class:
-            //class : MuiButtonBase-root MuiButton-root MuiButton-text jss10 jss11 undefined Mui-disabled jss16 Mui-disabled
-            // }
             if (a == 16) {
                 //Verfiying the URL of DOWNLOAD INK It's Free Button
                 it("Verify URL of DOWNLOAD INK It's Free Button", () => {

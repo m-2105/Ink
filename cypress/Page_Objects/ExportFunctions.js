@@ -1,7 +1,7 @@
+// This file holds the reuseable functions/methods that are used in actual test scripts in order to simplify test code
 /// <reference types="cypress' / >
 import '../fixtures/inkforall_url.json'
 import '../fixtures/Href.json'
-import './Local_Storage'
 import { Keys } from './Key'
 
 //Function for Navigating URl
@@ -65,7 +65,7 @@ export function navbar(n) {
       }
     }
     validation(i)
-    if (/*i == 1 || i==5 */ i == 6 && n!=20) {
+    if (/*i == 1 || i==5 */ i == 6 && n != 20) {
       cy.clearLocalStorage()
       cy.clearCookies()
     }
@@ -175,7 +175,7 @@ export function PressZip(b) {
     domValidation1(this.data[25].path, this.data[25].linkAddress)
   })
 }
-//Function for Validating URL of All Downoad Options In Press Page 
+//Function for Validating URL of All the Labels In Pricing Page
 export function label() {
   cy.fixture('Href').then(function (data, x) {
     this.data = data;
