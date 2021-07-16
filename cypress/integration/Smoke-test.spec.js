@@ -1,3 +1,4 @@
+//This File contains the actual testscript
 /// <reference types="cypress' / >
 
 import '../fixtures/inkforall_url.json'
