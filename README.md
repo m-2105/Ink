@@ -1,5 +1,5 @@
 # INK
-> This project contains the scripts and code-base for Smoke Tests used For Verifying the Build to be ready for further Testing
+> This project contains the scripts and code-base for Smoke Tests used for verifying the Build to be ready for further Testing
 
 ## Table Of Contents
 - [Installation](#installation)
